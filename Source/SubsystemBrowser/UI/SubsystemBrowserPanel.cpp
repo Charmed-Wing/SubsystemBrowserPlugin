@@ -421,7 +421,7 @@ FText SSubsystemBrowserPanel::GetFilterStatusText() const
 	{
 		if ( FilteredSubsystemsCount == 0)
 		{   // all subsystems were filtered out
-			return FText::Format( LOCTEXT("ShowSubsystemsCounterFmt", "No matching subsystems out of {0} total"), FText::AsNumber( SubsystemTotalCount ) );
+			return FText::Format( LOCTEXT("ShowingNoActorsFmt", "No matching subsystems out of {0} total"), FText::AsNumber( SubsystemTotalCount ) );
 		}
 		else
 		{   // got something to display

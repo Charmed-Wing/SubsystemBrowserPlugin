@@ -247,11 +247,11 @@ void FSubsystemTreeSubsystemItem::GenerateContextMenu(UToolMenu* MenuBuilder) co
 					{
 						if (FSubsystemBrowserUtils::TryUpdateDefaultConfigFile(Self.Pin()->GetObjectForDetails()))
 						{
-							FSubsystemBrowserUtils::ShowBrowserInfoMessage(LOCTEXT("SubsystemBrowser", "Successfully updated defaults"), SNotificationItem::CS_Success);
+							FSubsystemBrowserUtils::ShowBrowserInfoMessage(LOCTEXT("SubsystemBrowserUpdateSuccess", "Successfully updated defaults"), SNotificationItem::CS_Success);
 						}
 						else
 						{
-							FSubsystemBrowserUtils::ShowBrowserInfoMessage(LOCTEXT("SubsystemBrowser", "Failed to update defaults"), SNotificationItem::CS_Fail);
+							FSubsystemBrowserUtils::ShowBrowserInfoMessage(LOCTEXT("SubsystemBrowserUpdateFailed", "Failed to update defaults"), SNotificationItem::CS_Fail);
 						}
 					}
 				}),
@@ -269,7 +269,7 @@ void FSubsystemTreeSubsystemItem::GenerateContextMenu(UToolMenu* MenuBuilder) co
 					{
 						FString ClipboardText = FSubsystemBrowserUtils::GenerateConfigExport(Self.Pin().Get(), true);
 						FSubsystemBrowserUtils::SetClipboardText(ClipboardText);
-						FSubsystemBrowserUtils::ShowBrowserInfoMessage(LOCTEXT("SubsystemBrowser", "Copied to clipboard"), SNotificationItem::CS_Success);
+						FSubsystemBrowserUtils::ShowBrowserInfoMessage(LOCTEXT("ClipboardCopy", "Copied to clipboard"), SNotificationItem::CS_Success);
 					}
 				}),
 				FCanExecuteAction::CreateSP(this, &FSubsystemTreeSubsystemItem::IsConfigExportable)
@@ -286,7 +286,7 @@ void FSubsystemTreeSubsystemItem::GenerateContextMenu(UToolMenu* MenuBuilder) co
 					{
 						FString ClipboardText = FSubsystemBrowserUtils::GenerateConfigExport(Self.Pin().Get(), false);
 						FSubsystemBrowserUtils::SetClipboardText(ClipboardText);
-						FSubsystemBrowserUtils::ShowBrowserInfoMessage(LOCTEXT("SubsystemBrowser", "Copied to clipboard"), SNotificationItem::CS_Success);
+						FSubsystemBrowserUtils::ShowBrowserInfoMessage(LOCTEXT("ClipboardCopy", "Copied to clipboard"), SNotificationItem::CS_Success);
 					}
 				}),
 				FCanExecuteAction::CreateSP(this, &FSubsystemTreeSubsystemItem::IsConfigExportable)
